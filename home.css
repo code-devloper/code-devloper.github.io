@@ -1,0 +1,89 @@
+:root {
+/* Colors: */
+  --bg: #2b2d31;
+  --accent: #5686f5;
+  --accent-10: #5686f510;
+  --emphasis: #e8e8fd;
+  --text: #d7dadd;
+/* Typography */
+  --h1: 2.25rem;
+  --h2: 1.5rem;
+  --h3: 1.25rem;
+  --paragraph: clamp(1rem, 0.875rem + 0.4vw, 1.125rem);
+  --info-text: 1rem;
+  --text-width-wide: 70ch;
+  --text-width-medium: 60ch;
+  --fw-bold: 700; 
+  --fw-regular: 500;
+  --fw-light: 300;
+/* Spacing */
+  --spacing-xxs: 0.5em;
+  --spacing-xs: 1em;
+  --spacing-s: 1.5em;
+  --spacing-m: 3em;
+  --spacing-l: 6em;
+  --spacing-xl: 8em;
+/* Misc */
+  --radius-xs: 0.25em;
+  --radius-s: 0.5em;
+  --center-it: auto;
+}
+
+p {
+  font-size: var(--paragraph);
+  color: var(--text);
+  line-height: 32px;
+  letter-spacing: 0.25px;
+}
+
+h1 {
+  color: var(--emphasis);
+  margin-bottom: var(--spacing-s);
+  font-size: var(--h1);
+  font-weight: var(--fw-bold);
+}
+
+h2 {
+  color: var(--emphasis);
+  margin-bottom: var(--spacing-s);
+  margin-top: var(--spacing-m);
+  font-size: var(--h2);
+  font-weight: var(--fw-bold);
+  font-family: 'Inter', sans-serif;
+}
+
+h3 {
+  color: var(--accent);
+  margin-bottom: var(--spacing-s);
+  font-size: var(--h3);
+  font-weight: var(--fw-bold);
+}
+
+
+.lonker {
+  position: relative;
+  color: #3877f5;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.linker:hover {
+  color: #3877f5;
+}
+
+.linker::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #3877f5;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+.linker:hover::before {
+  transform: scaleX(1);
+}
