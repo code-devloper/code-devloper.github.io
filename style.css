@@ -1,0 +1,236 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;700;800&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Lobster&display=swap');
+
+/* List of variables */
+
+:root {
+/* Colors: */
+  --bg: #2b2d31;
+  --accent: #5686f5;
+  --accent-10: #5686f510;
+  --emphasis: #e8e8fd;
+  --text: #d7dadd;
+/* Typography */
+  --h1: 2.25rem;
+  --h2: 1.5rem;
+  --h3: 1.25rem;
+  --paragraph: clamp(1rem, 0.875rem + 0.4vw, 1.125rem);
+  --info-text: 1rem;
+  --text-width-wide: 70ch;
+  --text-width-medium: 60ch;
+  --fw-bold: 700; 
+  --fw-regular: 500;
+  --fw-light: 300;
+/* Spacing */
+  --spacing-xxs: 0.5em;
+  --spacing-xs: 1em;
+  --spacing-s: 1.5em;
+  --spacing-m: 3em;
+  --spacing-l: 6em;
+  --spacing-xl: 8em;
+/* Misc */
+  --radius-xs: 0.25em;
+  --radius-s: 0.5em;
+  --center-it: auto;
+}
+
+body {
+  background-color: var(--bg);
+  font-family: 'Inter', sans-serif;
+}
+
+main {
+  margin-top: var(--spacing-xl);
+  padding-block: var(--spacing-m); 
+}
+
+article {
+  margin: var(--center-it);
+  max-width: var(--text-width-wide);
+}
+
+article > p ~ p {
+  margin-bottom: var(--spacing-s);
+}
+
+h1 {
+  color: var(--emphasis);
+  margin-bottom: var(--spacing-s);
+  font-size: var(--h1);
+  font-weight: var(--fw-bold);
+}
+
+h2 {
+  color: var(--emphasis);
+  margin-bottom: var(--spacing-s);
+  margin-top: var(--spacing-m);
+  font-size: var(--h2);
+  font-weight: var(--fw-bold);
+}
+
+h3 {
+  color: var(--accent);
+  margin-bottom: var(--spacing-s);
+  font-size: var(--h3);
+  font-weight: var(--fw-bold);
+}
+
+.h_size {
+  font-size: 400%;
+  text-align: center;
+}
+
+hr {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to left, #ccc, #ccc, #ccc);
+}
+
+.cited {
+  font-size: small;
+  font-style: italic;
+  color: var(--emphasis);
+}
+
+p {
+  font-size: var(--paragraph);
+  color: var(--text);
+  line-height: 32px;
+  letter-spacing: 0.25px;
+}
+
+em {
+  color: var(--emphasis);
+}
+
+cite {
+  font-weight: var(--fw-light);
+  color: var(--emphasis);
+  font-style: italic;
+}
+
+.info_block {
+  display: flex;
+  gap: 6px;
+  margin-bottom: var(--spacing-xs);
+}
+
+.info {
+  font-size: var(--info-text);
+  color: var(--text);
+}
+
+.likes, .replies, .mentions {
+  font-size: var(--info-text);
+  color: var(--accent);
+}
+
+.ddmmyyyy {
+  display: inline-block;
+  background-color: var(--accent-10);
+  color: var(--accent);
+  margin-bottom: var(1);
+  font-size: var(--info-text);
+  padding: 7px;
+  border-radius: 0.5em;
+}
+
+a {
+  position: relative;
+  color: #3877f5;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  color: #3877f5;
+}
+
+a::before {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 100%;
+  height: 2px;
+  bottom: 0;
+  left: 0;
+  background-color: #3877f5;
+  transform: scaleX(0);
+  transition: transform 0.3s ease;
+}
+
+a:hover::before {
+  transform: scaleX(1);
+}
+
+/* not usable */
+.tran {
+  color: var(--accent);
+  text-decoration: none;
+  -o-transition: .5s;
+  -ms-transition: .5s;
+  -moz-transition: .5s;
+  -webkit-transition: .5s;
+  transition: .5s;
+}
+
+.tran:hover {
+  color: #3877f5;
+  font-size: 110%;
+}
+
+
+img {
+  width: 100%;
+  margin-block: 0.5px;
+  border-radius: 0.5em;
+}
+
+.img_a {
+  display: block;
+  justify-content: center;
+  border-radius: 9999px;
+  width: 8rem;
+  height: 8rem;
+  
+}
+
+.highlight {
+  margin: var(--center-it);
+  margin-bottom: var(--spacing-m);
+  background-color: var(--accent-10);
+  max-width: var(--text-width-medium);
+  border-radius: 0.5em;
+  padding: var(--spacing-m);
+}
+
+ul {
+  margin: var(--spacing-s);
+}
+
+li {
+  padding-bottom: var(--spacing-s);
+  margin-left: var(--spacing-xs);
+  font-size: var(--paragraph);
+  color: var(--emphasis);
+  list-style: square;
+}
+
+
+@media screen and (max-width: 760px) {
+  body {
+    padding-inline: var(--spacing-s);
+  }
+  
+  .info_block {
+    flex-direction: column;
+  }
+  
+  .highlight {
+    padding: var(--spacing-s);
+    max-width: var(--text-width-wide);
+  }
+}
